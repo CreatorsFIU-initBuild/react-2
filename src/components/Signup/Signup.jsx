@@ -5,7 +5,7 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { Button, Form } from "react-bootstrap";
+import { Alert, Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -14,6 +14,7 @@ import "./Signup.css";
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
   const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
@@ -58,6 +59,7 @@ const Signup = () => {
       });
       navigate("/");
     } catch (error) {
+      setShowErrorAlert(true);
       console.error(error);
     }
   };
@@ -111,7 +113,14 @@ const Signup = () => {
                 <p className="text-center">
                   Sign up to join our marketplace & connect with creators.
                 </p>
-
+                <Alert
+                  variant="danger"
+                  show={showErrorAlert}
+                  onClose={() => setShowErrorAlert(false)}
+                  dismissible
+                >
+                  Something went wrong. Please try again.
+                </Alert>
                 <Form.Group className="mb-3" controlId="username">
                   <Form.Label>
                     Username <span className="text-danger">*</span>
