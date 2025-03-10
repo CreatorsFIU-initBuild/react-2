@@ -1,11 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './FAQ'
-import './index.css'
-import FAQ from './FAQ'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import FAQ from "./FAQ";
+import Authentication from "./pages/Authentication";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Authentication />,
+  },
+  {
+    path: "/faq",
+    element: <FAQ />,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <FAQ />
+    <RouterProvider router={router} />
   </React.StrictMode>
-)
+);
