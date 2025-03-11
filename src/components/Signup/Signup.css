@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 2.2rem;
 }
@@ -12,7 +12,7 @@ h1 {
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -54,6 +54,9 @@ body {
   position: relative;
   width: 100%;
 }
+input:valid {
+  background-image: none !important; /* Removes check mark for valid fields */
+}
 
 .password-container .password-input {
   padding-right: 45px;
@@ -78,7 +81,7 @@ body {
 }
 
 /* Submit Button */
-button[type="submit"] {
+button[type='submit'] {
   background-color: var(--primary-color);
   border: none;
   font-size: 1.2rem;
@@ -87,12 +90,12 @@ button[type="submit"] {
   transition: all 0.3s;
 }
 
-button[type="submit"]:disabled {
+button[type='submit']:disabled {
   background: #ccc;
   cursor: not-allowed;
 }
 
-button[type="submit"]:hover:not(:disabled) {
+button[type='submit']:hover:not(:disabled) {
   background-color: #0c2c61;
   box-shadow: 0px 4px 10px rgba(8, 30, 63, 0.4);
 }
