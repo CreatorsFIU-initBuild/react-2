@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { auth } from '../../firebase'
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { Alert, Button, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
+// import { useNavigate } from 'react-router-dom'
 
 const SignIn = ({ formClass, toggle }) => {
   const [showPassword, setShowPassword] = useState(false)
   const [showErrorAlert, setShowErrorAlert] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
-  const [showForgotPassword, setShowForgotPassword] = useState(false)
   const navigate = useNavigate()
 
   const validationSchema = Yup.object().shape({
@@ -29,16 +29,9 @@ const SignIn = ({ formClass, toggle }) => {
     }
   }
 
-  const handleForgotPassword = async (email) => {
-    try {
-      await sendPasswordResetEmail(auth, email)
-      setErrorMessage('Password reset email sent! Check your inbox.')
-      setShowErrorAlert(true)
-      setShowForgotPassword(false) // Close the forgot password prompt
-    } catch (error) {
-      setErrorMessage('Error sending reset email. Please try again later.')
-      setShowErrorAlert(true)
-    }
+  // Redirect to ForgotPassword page
+  const handleForgotPasswordClick = () => {
+    navigate('/forgot-password'); // Use the route path defined in your router
   }
 
   return (
@@ -112,28 +105,15 @@ const SignIn = ({ formClass, toggle }) => {
 
             {/* Forgot Password Link */}
             <div className='text-center mb-3'>
-              <Button variant='link' className='forgot-password-btn' onClick={() => setShowForgotPassword(true)}>
+              <Button variant='link' className='forgot-password-btn' onClick={handleForgotPasswordClick}>
                 Forgot Password?
               </Button>
             </div>
 
-            {/* Forgot Password Form */}
-            {showForgotPassword && (
-              <Form.Group className='mb-3'>
-                <Form.Label>Enter your email to receive a password reset link</Form.Label>
-                <Form.Control type='email' placeholder='Enter your email' onChange={handleChange} onBlur={handleBlur} value={values.email} />
-                <Button variant='primary' onClick={() => handleForgotPassword(values.email)}>
-                  Send Reset Link
-                </Button>
-              </Form.Group>
-            )}
-
             {/* Sign In Button */}
-            {!showForgotPassword && (
-              <Button variant='primary' type='submit' className='w-100' disabled={!isValid}>
-                Sign In
-              </Button>
-            )}
+            <Button variant='primary' type='submit' className='w-100' disabled={!isValid}>
+              Sign In
+            </Button>
 
             {/* Sign Up Redirect */}
             <p className='text-center mt-3'>
@@ -149,4 +129,4 @@ const SignIn = ({ formClass, toggle }) => {
   )
 }
 
-export default SignIn
+export default SignIn;
