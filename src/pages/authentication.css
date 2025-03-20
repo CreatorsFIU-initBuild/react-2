@@ -53,7 +53,7 @@
   right: 50%;
 }
 
-/* 🔹 Updated: Smooth Form Transitions */
+/* Form Transitions */
 ._container.sign-in .form.sign-in {
   opacity: 1;
   transform: translateX(0);
@@ -113,7 +113,7 @@
   transform: translateX(0);
 }
 
-/* 🔹 Mobile Responsiveness */
+/* Mobile Responsiveness */
 @media only screen and (max-width: 425px) {
   ._container::before,
   ._container.sign-in::before,
