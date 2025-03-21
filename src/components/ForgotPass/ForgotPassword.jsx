@@ -34,7 +34,7 @@ const ForgotPassword = ({ toggleForgotPassword }) => {
   };
 
   return (
-    <main className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
+    <main className="flex justify-center items-center min-h-screen px-4">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
         <h1 className="text-center text-3xl font-bold text-gray-900 pt-4">
           CreatorsFIU
@@ -76,12 +76,12 @@ const ForgotPassword = ({ toggleForgotPassword }) => {
               onFocus={() => setIsTouched(true)}
               required
             />
-            <div
-              className={`text-red-600 text-sm ${
-                isTouched && (!isEmailValid || !email) ? "" : "hidden"
-              }`}
-            >
-              Must be a valid email (e.g., name@example.com).
+            <div className="h-5 mt-1"> {/* Fixed height container for validation message */}
+              <p className={`text-red-600 text-sm ${
+                isTouched && (!isEmailValid || !email) ? "" : "invisible"
+              }`}>
+                Must be a valid email (e.g., name@example.com).
+              </p>
             </div>
           </div>
 
