@@ -5,6 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import FAQ from './FAQ'
 import Authentication from './pages/Authentication'
+import SellerDash from './components/Dashboard/sellerDash'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/faq',
     element: <FAQ />,
+  },
+  {
+    path: '/sellerDash',
+    element: <SellerDash />,
   },
 ])
 
