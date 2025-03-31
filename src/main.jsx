@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FAQ from "./FAQ";
 import Authentication from "./pages/Authentication";
-import ForgotPassword from "./components/ForgotPass/ForgotPassword.jsx";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SellerDash from "./components/Dashboard/sellerDash";
 
 const router = createBrowserRouter([
   {
@@ -15,12 +14,12 @@ const router = createBrowserRouter([
     element: <Authentication />,
   },
   {
-    path: "/forgot-password",
-    element: <ForgotPassword />,
-  },
-  {
     path: "/faq",
     element: <FAQ />,
+  },
+  {
+    path: "/seller",
+    element: <SellerDash />,
   },
   {
     path: "/dashboard",
