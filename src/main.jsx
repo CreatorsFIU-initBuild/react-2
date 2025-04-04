@@ -4,9 +4,12 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FAQ from "./FAQ";
 import Authentication from "./pages/Authentication";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./layouts/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SellerDash from "./components/Dashboard/sellerDash";
+import Favorites from "./pages/Dashboard/Favorites";
+import Cart from "./pages/Dashboard/Cart";
+import ManageProfile from "./pages/Dashboard/ManageProfile";
 
 const router = createBrowserRouter([
   {
@@ -23,27 +26,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: (
-      <ProtectedRoute>
-        <Dashboard />
-      </ProtectedRoute>
-    ),
+    element: <Dashboard />,
     children: [
       {
-        path: "seller",
-        element: (
-          <ProtectedRoute>
-            <div>My Listings</div>
-          </ProtectedRoute>
-        ),
+        path: "favorites",
+        element: <Favorites />,
       },
       {
-        path: "buyer",
-        element: (
-          <ProtectedRoute>
-            <div>My Purchases</div>
-          </ProtectedRoute>
-        ),
+        path: "cart",
+        element: <Cart />,
+      },
+      {
+        path: "profile",
+        element: <ManageProfile />,
       },
     ],
   },
