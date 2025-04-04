@@ -29,12 +29,15 @@ const Authentication = () => {
 
   return (
     <div className="_container" ref={containerRef}>
-      <div className="_row">
-        <div className="_col _align-items-center flex-column sign-up">
+      <div className="row">
+        <div
+          className="col align-items-center flex-col sign-up"
+          style={{ flexDirection: "column" }}
+        >
           <Signup formClass="sign-up" toggle={toggle} />
         </div>
 
-        <div className="_col _align-items-center flex-column sign-in">
+        <div className="col align-items-center flex-col sign-in">
           {!showForgotPassword ? (
             <div className="sign-in">
               <SignIn
@@ -50,13 +53,13 @@ const Authentication = () => {
           )}
         </div>
       </div>
-      <div className="_row content-row">
-        <div className="_col _align-items-center flex-column">
+      <div className="row content-row">
+        <div className="col align-items-center flex-col">
           <div className="text sign-in">
             <h2>Welcome</h2>
           </div>
         </div>
-        <div className="_col _align-items-center flex-column">
+        <div className="col align-items-center flex-col">
           <div className="text sign-up">
             <h2>Join with us</h2>
           </div>
