@@ -1,10 +1,17 @@
 import { FaChevronDown } from "react-icons/fa";
 import CountrySelect from "react-select-country-list";
-import moment from "moment-timezone";
+import { useTimezoneSelect, allTimezones } from "react-timezone-select";
 
 const ManageProfile = () => {
   const countryList = CountrySelect();
-  console.log(moment.tz.zone(moment.tz.names()[0]));
+  const { options, parseTimezone } = useTimezoneSelect({
+    allTimezones,
+    labelStyle: "original",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="flex flex-col min-h-screen !p-4">
@@ -14,10 +21,16 @@ const ManageProfile = () => {
           src="https://a.storyblok.com/f/191576/1200x800/215e59568f/round_profil_picture_after_.webp"
           alt="Profile picture"
         />
+        <p className="text-blue-600 hover:underline text-xs cursor-pointer">
+          Change profile picture
+        </p>
         <h1>Hello, John Doe</h1>
         <h2 className="text-gray-800">Here, you can edit your profile</h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 !space-y-5 !mt-10 !ml-10">
+      <form
+        onSubmit={handleSubmit}
+        className="grid grid-cols-1 md:grid-cols-2 gap-5 !space-y-5 !mt-10 !ml-10"
+      >
         <div className="flex flex-col gap-2">
           <label htmlFor="full_name">Full Name</label>
           <input
@@ -45,8 +58,9 @@ const ManageProfile = () => {
               name="gender"
               id="gender"
               className="w-full appearance-none !pr-10 !pl-5 !py-3 rounded-lg shadow-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              defaultValue="-- Select gender --"
             >
-              <option value="" className="text-gray-500" disabled selected>
+              <option value="" className="text-gray-500">
                 -- Select gender --
               </option>
               <option value="male">Male</option>
@@ -66,8 +80,9 @@ const ManageProfile = () => {
               name="country"
               id="country"
               className="w-full appearance-none !pr-10 !pl-5 !py-3 rounded-lg shadow-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              defaultValue="-- Select country of residence --"
             >
-              <option value="" className="text-gray-500" disabled selected>
+              <option value="" className="text-gray-500">
                 -- Select country of residence --
               </option>
               {countryList.getData().map((country) => (
@@ -88,8 +103,9 @@ const ManageProfile = () => {
               name="language"
               id="language"
               className="w-full appearance-none !pr-10 !pl-5 !py-3 rounded-lg shadow-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              defaultValue="-- Preferred Language --"
             >
-              <option value="" className="text-gray-500" disabled selected>
+              <option value="" className="text-gray-500">
                 -- Preferred Language --
               </option>
               {countryList.getData().map((country) => (
@@ -110,13 +126,14 @@ const ManageProfile = () => {
               name="time_zone"
               id="time_zone"
               className="w-full appearance-none !pr-10 !pl-5 !py-3 rounded-lg shadow-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              defaultValue="-- Choose Time Zone --"
             >
-              <option value="" className="text-gray-500" disabled selected>
+              <option value="" className="text-gray-500">
                 -- Choose Time Zone --
               </option>
-              {countryList.getData().map((country) => (
-                <option key={country.value} value={country.value}>
-                  {country.label}
+              {options.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
                 </option>
               ))}
             </select>
@@ -125,7 +142,7 @@ const ManageProfile = () => {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
