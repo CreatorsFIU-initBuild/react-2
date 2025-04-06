@@ -2,60 +2,6 @@ import { FaMessage } from "react-icons/fa6";
 import { FaHeart, FaShareAlt } from "react-icons/fa";
 
 const ProductCard = (props) => {
-  //   return (
-  //     <div className="flex gap-8 bg-white border border-gray-300 shadow-md shadow-gray-500/50 rounded-xl overflow-hidden items-center justify-start !p-5">
-  //       <div className="relative w-32 h-32 flex-shrink-0">
-  //         <img
-  //           className="absolute left-0 top-0 w-full h-full object-cover transition duration-50 rounded-md"
-  //           loading="lazy"
-  //           src={props.productImage}
-  //         />
-  //       </div>
-
-  //       <div className="flex flex-col">
-  //         <div className="flex flex-col gap-0.5">
-  //           <p className="text-xl font-bold">{props.productName}</p>
-
-  //           <p className="text-xs text-gray-500">
-  //             {props.productType} | {props.price} | {props.sellerName}
-  //           </p>
-  //         </div>
-
-  //         <div className="flex !my-2 items-center gap-2">
-  //           <img
-  //             src={props.sellerProfilePicture}
-  //             alt="seller-profile-picture"
-  //             className="w-10 h-10 rounded-full object-cover"
-  //           />
-  //           <p className="text-gray-500 text-sm">
-  //             Saved from{" "}
-  //             <span className="text-black underline cursor-pointer">
-  //               {props.sellerName}
-  //             </span>
-  //           </p>
-  //         </div>
-
-  //         <div className="flex gap-5">
-  //           <button
-  //             className="bg-green-500 hover:bg-green-600 text-white rounded-md flex items-center cursor-pointer !px-4 !py-2"
-  //             title="Share"
-  //           >
-  //             <FaMessage size={20} color="white" className="!mr-2" />
-  //             Message Seller
-  //           </button>
-  //           <button className="rounded-md bg-gray-300 hover:bg-gray-400 cursor-pointer !px-4 !py-2">
-  //             <FaShareAlt size={20} />
-  //           </button>
-  //           <button
-  //             className="rounded-md bg-gray-300 hover:bg-gray-400 cursor-pointer !px-4 !py-2"
-  //             title="Unfavorite"
-  //           >
-  //             <FaHeart size={20} color="red" />
-  //           </button>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
   return (
     <div className="flex flex-col md:flex-row gap-8 bg-white border border-gray-300 shadow-md shadow-gray-500/50 rounded-xl overflow-hidden items-center md:items-start justify-start !p-4 md:!p-5">
       {/* Product Image */}
@@ -155,10 +101,10 @@ const Favorites = () => {
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto">
-      <div className="!px-6">
-        <h1 className="!text-6xl !ml-24 !mt-8">Favorites</h1>
-        <div className="max-w-4xl !mx-auto !mt-12 flex flex-col gap-5">
+    <div className="flex-1 overflow-y-auto !py-5">
+      <div className="!px-6 w-full">
+        <h1 className="!text-6xl !ml-12 !mt-8">Wishlist</h1>
+        <div className="!ml-24 !mt-12 flex flex-col gap-5">
           {mockData.map((product, index) => (
             <ProductCard key={index} {...product} />
           ))}
