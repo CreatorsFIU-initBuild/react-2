@@ -10,6 +10,7 @@ import SellerDash from "./components/Dashboard/sellerDash";
 import Favorites from "./pages/Dashboard/Favorites";
 import Cart from "./pages/Dashboard/Cart";
 import ManageProfile from "./pages/Dashboard/ManageProfile";
+import PurchaseHistory from "./pages/Dashboard/PurchaseHistory";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <ManageProfile />,
+      },
+      {
+        path: "history",
+        element: <PurchaseHistory />,
       },
     ],
   },
