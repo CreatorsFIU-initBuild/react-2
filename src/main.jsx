@@ -7,6 +7,7 @@ import Authentication from "./pages/Authentication";
 import Dashboard from "./layouts/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SellerDash from "./components/Dashboard/sellerDash";
+import Footer from  "./components/Footer/footer"
 import Favorites from "./pages/Dashboard/Favorites";
 import Cart from "./pages/Dashboard/Cart";
 import ManageProfile from "./pages/Dashboard/ManageProfile";
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/seller",
     element: <SellerDash />,
+  },
+  {
+    path: "/footer",
+    element: <Footer />
   },
   {
     path: "/dashboard",
