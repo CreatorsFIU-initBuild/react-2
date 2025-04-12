@@ -41,15 +41,22 @@
     margin-bottom: 0.3rem;
   }
 
-  .footer-middle ul {
+  .footer-middle {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    list-style: none;
-    padding: 1rem 0;
-    border-bottom: 1px solid #333;
-    margin: 0;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem; 
+    border-bottom: 1px solid #333; 
   }
+
+  .footer-middle ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  display: flex;
+  flex-direction: column; 
+   
+}
 
   .footer-bottom {
     display: flex;
@@ -58,13 +65,26 @@
     padding: 1rem 0;
     flex-wrap: wrap;
   }
-
-  .footer-icons span {
-    margin: 0 0.5rem;
-    cursor: pointer;
-    font-size: 1.2rem;
+  .footer-bottom p {
+    color: grey; /* Makes the text grey */
+    font-size: 12px; /* Adjusts the font size to be slightly smaller */
   }
 
+  .footer-icons {
+    display: flex; /* Arrange the icons in a horizontal row */
+    gap: 5rem; /* Add spacing between the icons */
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Align the icons vertically */
+  }
+  
+  .footer-icons img {
+    width: 40px; /* Set the width of the individual icons */
+    height: 40px; /* Ensure the height matches the width */
+    border-radius: 50%; /* Make the images circular */
+    object-fit: cover; /* Ensure the image content fits within the circular shape */
+    background-color: white; /* Set the background color to white */
+    padding: 5px; /* Add some padding to create space between the image and the border */
+  }
   .footer-extra {
     display: flex;
     justify-content: space-between;

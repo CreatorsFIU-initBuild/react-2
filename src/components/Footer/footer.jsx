@@ -49,26 +49,37 @@ const Footer = () => {
 
       <div className="footer-middle">
         <ul>
-          <li>About</li>
+          <li><strong>About</strong></li>
           <li>Careers</li>
-          <li>Contact</li>
+        </ul>
+        <ul>
+          <li><strong>Contact</strong></li>
           <li>F.A.Q.</li>
-          <li>Media Kit</li>
+        </ul>
+        <ul>
+          <li><strong>Media Kit</strong></li>
           <li>Press</li>
-          <li>Accessibility Help</li>
+        </ul>
+        <ul>
+          <li><strong>Accessibility help</strong></li>
           <li>User Agreement</li>
-          <li>Privacy Policy</li>
+        </ul>
+        <ul>
+          <li><strong>Privacy Policy</strong></li>
           <li>Your Florida Privacy Rights</li>
         </ul>
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 CreatorsFIU. All rights reserved. CreatorsFIU may earn a portion of sales from products that are purchased through our site as part of our Affiliate Partnerships with retailers.</p>
+        <p>© 2025 CreatorsFIU. All rights reserved. CreatorsFIU may earn a portion of sales from products that are 
+          <br/>purchased through our site as part of our Affiliate Partnerships with retailers.
+           The material on this may not<br/>be reproduced, distributed, transmitted, cached or otherwise used
+          except with the prior written permission of CreatorsFIU gang</p>
         <div className="footer-icons">
-          <span>🌕</span>
-          <span>📘</span>
-          <span>🐦</span>
-          <span>📷</span>
+          <span><img src="/facebook-logo.png" alt="Logo" /></span>
+          <span><img src="/X-twitter-logo.png" alt="Logo" /></span>
+          <span><img src="/instagram-logo.png" alt="Logo" /></span>
+          <span><img src="/tiktok-logo.png" alt="Logo" /></span>
         </div>
       </div>
 
