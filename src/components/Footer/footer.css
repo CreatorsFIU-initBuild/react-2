@@ -8,20 +8,22 @@
 
   .footer-top {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 50px;
     border-bottom: 1px solid #333;
     padding-bottom: 1.5rem;
   }
 
   .footer-logo img {
-    width: 80px;
+    width: 200px;
+    height: auto;
   }
+  
 
   .footer-links {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 200px; 
+    flex-wrap: wrap; 
   }
 
   .footer-links div h4 {

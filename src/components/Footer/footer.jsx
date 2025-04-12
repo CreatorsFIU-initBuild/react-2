@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-logo">
-          <img src="/assets/logo.png" alt="Logo" />
+          <img src="/CreatorsFIU.png" alt="Logo" />
         </div>
         <div className="footer-links">
           <div>
@@ -20,6 +20,14 @@ const Footer = () => {
             </ul>
           </div>
           <div>
+            <ul>
+              <li>Arts & crafts</li>
+              <li>Study Materials</li>
+              <li>Covers & cartoons</li>
+              <li>Free stuff</li>
+            </ul>
+          </div>
+          <div>
             <h4>MORE</h4>
             <ul>
               <li>Manage Account</li>
@@ -30,8 +38,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4>Newsletters</h4>
+
             <ul>
+              <li>Newsletters</li>
               <li>Download App</li>
             </ul>
           </div>
